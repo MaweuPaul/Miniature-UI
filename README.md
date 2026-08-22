@@ -1,6 +1,6 @@
-# Bullion UI
+# Miniature UI
 
-Bullion UI is an early-stage React component library built with TypeScript and Tailwind CSS. The project focuses on reusable APIs, predictable variants, native HTML behavior, and accessible interaction states.
+Miniature UI is an early-stage React component library built with TypeScript and Tailwind CSS. The project focuses on reusable APIs, predictable variants, native HTML behavior, and accessible interaction states.
 
 > This library is currently being developed and is not ready for production use or npm installation.
 
@@ -52,8 +52,8 @@ export function Example() {
 ## Local development
 
 ```powershell
-git clone git@github.com:MaweuPaul/Bullion-UI.git
-cd Bullion-UI/miniature-ui
+git clone git@github.com:MaweuPaul/Miniature-UI.git
+cd Miniature-UI
 npm install
 npm run dev
 ```
@@ -68,7 +68,7 @@ npm run lint
 ## Project structure
 
 ```text
-miniature-ui/
+Miniature-UI/
 |-- public/
 |-- src/
 |   |-- components/
@@ -85,11 +85,11 @@ miniature-ui/
 
 ## Design foundations
 
-Bullion UI currently uses a small Tailwind theme defined in `src/index.css`:
+Miniature UI uses a restrained, neutral visual system inspired by modern component libraries:
 
-- `bullion`: gold brand colors for primary actions and focus states
-- `ink`: deep neutral colors for text and secondary actions
-- `red`: destructive actions
+- Black and white for primary actions
+- Neutral gray for secondary, outlined, ghost, and focus states
+- Red for destructive actions and errors
 
 Components should follow these rules:
 
@@ -104,7 +104,7 @@ Components should follow these rules:
 ## Roadmap
 
 - [x] Configure React, TypeScript, Vite, and Tailwind CSS
-- [x] Define the initial Bullion color palette
+- [x] Define the initial neutral color direction
 - [x] Create typed Button variants and sizes
 - [x] Add disabled and loading states
 - [ ] Refine the Button loading presentation
@@ -128,4 +128,4 @@ Components should follow these rules:
 
 ## Status
 
-Bullion UI is under active development. APIs and visual decisions may change while the foundations are being established.
+Miniature UI is under active development. APIs and visual decisions may change while the foundations are being established.
