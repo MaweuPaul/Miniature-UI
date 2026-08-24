@@ -10,3 +10,9 @@ export {
   type InputProps,
   type InputSize,
 } from "./components/Input/input";
+
+export {
+  Textarea,
+  type TextAreaProps,
+  type TextareaSize,
+} from "./components/textarea/textarea"

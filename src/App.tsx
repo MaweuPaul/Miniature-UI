@@ -1,4 +1,4 @@
-import { Button, Input } from './index';
+import { Button, Input, Textarea } from './index';
 
 function App() {
   return (
@@ -54,6 +54,20 @@ function App() {
             defaultValue="Cannot edit this"
             disabled
           />
+          <Textarea
+            label="Biography"
+            placeholder="Tell us about yourself"
+            description="Maximum 300 characters."
+            maxLength={300}
+          />
+
+          <Textarea
+            label="Feedback"
+            defaultValue="The application..."
+            error="Feedback must contain at least 20 characters."
+          />
+
+          <Textarea label="Notes" textareasize="large" disabled />
         </section>
       </div>
     </main>
