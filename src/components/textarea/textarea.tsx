@@ -46,8 +46,14 @@ export function Textarea({
     .filter(Boolean)
     .join(' ');
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <div className="space-y-1.5">
+      <label
+        htmlFor={id}
+        className="block text-sm font-medium text-neutral-900"
+      >
+        {label}
+        {required && <span className="ml-1 text-red-600">*</span>}
+      </label>
 
       <textarea
         id={id}
@@ -58,7 +64,15 @@ export function Textarea({
         {...textareaProps}
       />
 
-      {message && <p id={messageId}>{message}</p>}
+      {message && (
+        <p
+          id={messageId}
+          role={error ? 'alert' : undefined}
+          className={`text-sm ${error ? 'text-red-600' : 'text-neutral-500'}`}
+        >
+          {message}
+        </p>
+      )}
     </div>
   );
 }
