@@ -1,6 +1,8 @@
-import { Button, Input, Textarea } from './index';
+import { useState } from 'react';
+import { Button, Input, Textarea, Checkbox } from './index';
 
 function App() {
+  const [accepted, setAccepted] = useState(false);
   return (
     <main className="min-h-screen bg-white p-8">
       <div className="mx-auto max-w-xl space-y-10">
@@ -68,7 +70,15 @@ function App() {
           />
 
           <Textarea label="Notes" textareasize="large" disabled />
+          <Checkbox
+            label="Accept the terms"
+            description="You must accept before continuing."
+            checked={accepted}
+            onChange={(event) => setAccepted(event.target.checked)}
+          />
         </section>
+
+        <Button disabled={!accepted}>Continue</Button>
       </div>
     </main>
   );

@@ -16,3 +16,9 @@ export {
   type TextAreaProps,
   type TextareaSize,
 } from "./components/textarea/textarea"
+
+
+export{
+  Checkbox,
+  type CheckboxProps
+} from "./components/checkbox/checkbox"
