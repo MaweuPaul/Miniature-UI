@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Input, Textarea, Checkbox, Select } from './index';
+import { Button, Input, Textarea, Checkbox, Select, Alert } from './index';
 
 function App() {
   const [accepted, setAccepted] = useState(false);
@@ -89,6 +89,23 @@ function App() {
             { label: 'United Kingdom', value: 'uk' },
           ]}
         />
+
+        <Alert title="Information">
+          Your profile details can be changed later.
+        </Alert>
+
+        <Alert variant="success" title="Changes saved">
+          Your account was updated successfully.
+        </Alert>
+
+        <Alert variant="warning" title="Subscription ending">
+          <Button>Try again</Button>
+          Your subscription expires in three days.
+        </Alert>
+
+        <Alert variant="danger" title="Unable to save">
+          Check the form and try again.
+        </Alert>
       </div>
     </main>
   );

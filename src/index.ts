@@ -29,3 +29,8 @@ export {
   type SelectProps,
   type SelectOption,
 } from "./components/select/select";
+export {
+  Alert,
+  type AlertProps,
+  type AlertVariant,
+} from "./components/alert/alert";
