@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Input, Textarea, Checkbox } from './index';
+import { Button, Input, Textarea, Checkbox, Select } from './index';
 
 function App() {
   const [accepted, setAccepted] = useState(false);
@@ -79,6 +79,16 @@ function App() {
         </section>
 
         <Button disabled={!accepted}>Continue</Button>
+
+        <Select
+          error="Please select a country"
+          label="country"
+          options={[
+            { label: 'United States', value: 'us' },
+            { label: 'Canada', value: 'ca' },
+            { label: 'United Kingdom', value: 'uk' },
+          ]}
+        />
       </div>
     </main>
   );

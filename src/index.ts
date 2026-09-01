@@ -1,3 +1,4 @@
+
 export {
   Button,
   type ButtonProps,
@@ -22,3 +23,9 @@ export{
   Checkbox,
   type CheckboxProps
 } from "./components/checkbox/checkbox"
+
+export {
+  Select,
+  type SelectProps,
+  type SelectOption,
+} from "./components/select/select";
