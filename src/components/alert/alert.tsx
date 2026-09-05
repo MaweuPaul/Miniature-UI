@@ -9,10 +9,12 @@ export type AlertProps = ComponentPropsWithoutRef<'div'> & {
 };
 
 const variantClasses: Record<AlertVariant, string> = {
-  info: 'border-blue-200 bg-blue-50 text-blue-900',
-  success: 'border-green-200 bg-green-50 text-green-900',
-  warning: 'border-yellow-200 bg-yellow-50 text-yellow-900',
-  danger: 'border-red-200 bg-red-50 text-red-900',
+  info: 'border-blue-200 border-l-blue-600 bg-blue-50/70 text-blue-950',
+  success:
+    'border-emerald-200 border-l-emerald-600 bg-emerald-50/70 text-emerald-950',
+  warning:
+    'border-amber-200 border-l-amber-500 bg-amber-50/70 text-amber-950',
+  danger: 'border-red-200 border-l-red-600 bg-red-50/70 text-red-950',
 };
 
 export function Alert({
@@ -22,7 +24,11 @@ export function Alert({
   className = '',
   ...alertProps
 }: AlertProps) {
-  const classes = ['rounded-md border p-4', variantClasses[variant], className]
+  const classes = [
+    'rounded-lg border border-l-4 px-5 py-4 shadow-sm',
+    variantClasses[variant],
+    className,
+  ]
     .filter(Boolean)
     .join(' ');
 
@@ -32,9 +38,11 @@ export function Alert({
       role={variant === 'danger' ? 'alert' : 'status'}
       {...alertProps}
     >
-      {title && <p className="font-semibold">{title}</p>}
+      {title && <p className="text-sm font-semibold leading-6">{title}</p>}
 
-      <div className={title ? 'mt-1 text-sm' : 'text-sm'}>{children}</div>
+      <div className={`text-sm leading-6 opacity-90 ${title ? 'mt-0.5' : ''}`}>
+        {children}
+      </div>
     </div>
   );
 }

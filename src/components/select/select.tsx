@@ -33,8 +33,9 @@ export function Select({
   const messageId = `${id}-message`;
 
   const classes = [
-    'block min-h-11 w-full rounded-md border bg-white px-3 text-sm text-neutral-900',
-    'focus-visible:outline-none focus-visible:ring-2',
+    'block min-h-11 w-full rounded-lg border bg-white px-3 py-2.5 text-sm text-neutral-900 shadow-sm transition-colors',
+    'hover:border-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1',
+    'disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:text-neutral-500 disabled:shadow-none',
     error
       ? 'border-red-600 focus-visible:ring-red-200'
       : 'border-neutral-300 focus-visible:border-neutral-900 focus-visible:ring-neutral-300',
@@ -44,10 +45,10 @@ export function Select({
     .join(' ');
 
   return (
-    <div className="space-y-1.5">
+    <div className="space-y-2">
       <label
         htmlFor={id}
-        className="block text-sm font-medium text-neutral-900"
+        className="block text-sm font-semibold text-neutral-900"
       >
         {label}
       </label>

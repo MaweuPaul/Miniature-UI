@@ -34,3 +34,9 @@ export {
   type AlertProps,
   type AlertVariant,
 } from "./components/alert/alert";
+
+export {
+  RadioGroup,
+  type RadioGroupProps,
+  type RadioOption,
+} from "./components/radio/radio";

@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import { Button, Input, Textarea, Checkbox, Select, Alert } from './index';
+import {
+  Button,
+  Input,
+  Textarea,
+  Checkbox,
+  Select,
+  Alert,
+  RadioGroup,
+} from './index';
 
 function App() {
   const [accepted, setAccepted] = useState(false);
+  const [plan, setPlan] = useState('');
   return (
     <main className="min-h-screen bg-white p-8">
       <div className="mx-auto max-w-xl space-y-10">
@@ -82,7 +91,8 @@ function App() {
 
         <Select
           error="Please select a country"
-          label="country"
+          label="Country"
+          placeholder="Select a country"
           options={[
             { label: 'United States', value: 'us' },
             { label: 'Canada', value: 'ca' },
@@ -99,13 +109,40 @@ function App() {
         </Alert>
 
         <Alert variant="warning" title="Subscription ending">
-          <Button>Try again</Button>
-          Your subscription expires in three days.
+          <p>Your subscription expires in three days.</p>
+          <Button className="mt-3" size="small">
+            Renew subscription
+          </Button>
         </Alert>
 
         <Alert variant="danger" title="Unable to save">
           Check the form and try again.
         </Alert>
+        <RadioGroup
+          legend="Choose a plan"
+          name="plan"
+          value={plan}
+          onValueChange={setPlan}
+          error={plan === '' ? 'Please choose a plan.' : undefined}
+          options={[
+            {
+              label: 'Basic',
+              value: 'basic',
+              description: 'For personal projects.',
+            },
+            {
+              label: 'Pro',
+              value: 'pro',
+              description: 'For professional projects.',
+            },
+            {
+              label: 'Enterprise',
+              value: 'enterprise',
+              description: 'For large organizations.',
+              disabled: true,
+            },
+          ]}
+        />
       </div>
     </main>
   );
