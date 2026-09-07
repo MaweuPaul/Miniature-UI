@@ -7,11 +7,14 @@ import {
   Select,
   Alert,
   RadioGroup,
+  Dialog,
 } from './index';
 
 function App() {
   const [accepted, setAccepted] = useState(false);
   const [plan, setPlan] = useState('');
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white p-8">
       <div className="mx-auto max-w-xl space-y-10">
@@ -143,6 +146,19 @@ function App() {
             },
           ]}
         />
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-neutral-900">Dialog</h2>
+
+          <Button onClick={() => setDialogOpen(true)}>Open dialog</Button>
+          <Dialog
+            open={dialogOpen}
+            onOpenChange={setDialogOpen}
+            title="Edit profile"
+            closeButtonClassName="bg-red-50 text-red-600 hover:bg-red-100"
+          >
+            Profile form goes here.
+          </Dialog>
+        </section>
       </div>
     </main>
   );

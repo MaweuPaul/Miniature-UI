@@ -40,3 +40,9 @@ export {
   type RadioGroupProps,
   type RadioOption,
 } from "./components/radio/radio";
+
+
+export {
+  Dialog,
+  type DialogProps,
+} from "./components/dialog/dialog";
